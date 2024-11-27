@@ -7,7 +7,7 @@
 #      The apple does not draw a line as it falls.
 #      When A is pressed, the letter A appears on the apple.
 #      The apple falls to the ground when the A key is pressed.
-#      The apple and letter dissapear after the apple hits the ground.
+#      The apple and letter disapear after the apple hits the ground.
 ##############################################################################
 import turtle as trtl
 import random as rand
@@ -16,7 +16,9 @@ apple_image = "apple.gif" # Store the file name of your shape
 ground_height = -200
 apple_letter_x_offset = -25
 apple_letter_y_offset = -50
-letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U", "V", "W", "X", "Y", "Z"]
+apple_letters = ['A']
+
 
 wn = trtl.Screen()
 wn.setup(width=1.0, height=1.0)
@@ -41,6 +43,7 @@ def drop_apple():
   apple.goto(apple.xcor(), ground_height)
   apple.clear()
   apple.hideturtle()
+  apple_letters.pop()
   wn.tracer(False)
   reset_apple(apple)
 
@@ -64,6 +67,7 @@ def reset_apple(apple):
     newY = 0
     new_letter = rand.randint(0, len(letters))
     apple.goto(newX, newY)
+    apple_letters.append(letters[new_letter])
     draw_apple(apple, letters.pop(new_letter))
 
 #TODO Create a function that takes a turtle (apple) and its corresponding letter from the letter
@@ -95,11 +99,137 @@ def reset_apple(apple):
 # no arguments to be called when the specified key is pressed.
 
 
+def check_apple_a():
+  if("A" in apple_letters):
+    drop_apple()
 
+def check_apple_b():
+  if ("B" in apple_letters):
+    drop_apple()
 
+def check_apple_c():
+  if ("C" in apple_letters):
+    drop_apple()
+
+def check_apple_d():
+  if ("D" in apple_letters):
+    drop_apple()
+
+def check_apple_e():
+  if ("E" in apple_letters):
+    drop_apple()
+
+def check_apple_f():
+  if ("F" in apple_letters):
+    drop_apple()
+
+def check_apple_g():
+  if ("G" in apple_letters):
+    drop_apple()
+
+def check_apple_h():
+  if ("H" in apple_letters):
+    drop_apple()
+
+def check_apple_i():
+  if ("I" in apple_letters):
+    drop_apple()
+
+def check_apple_j():
+  if ("J" in apple_letters):
+    drop_apple()
+
+def check_apple_k():
+  if ("K" in apple_letters):
+    drop_apple()
+
+def check_apple_l():
+  if ("L" in apple_letters):
+    drop_apple()
+
+def check_apple_m():
+  if ("M" in apple_letters):
+    drop_apple()
+
+def check_apple_n():
+  if ("N" in apple_letters):
+    drop_apple()
+
+def check_apple_o():
+  if ("O" in apple_letters):
+    drop_apple()
+
+def check_apple_p():
+  if ("P" in apple_letters):
+    drop_apple()
+
+def check_apple_q():
+  if ("Q" in apple_letters):
+    drop_apple()
+
+def check_apple_r():
+  if ("R" in apple_letters):
+    drop_apple()
+
+def check_apple_s():
+  if ("S" in apple_letters):
+    drop_apple()
+
+def check_apple_t():
+  if ("T" in apple_letters):
+    drop_apple()
+
+def check_apple_u():
+  if ("U" in apple_letters):
+    drop_apple()
+
+def check_apple_v():
+  if ("V" in apple_letters):
+    drop_apple()
+
+def check_apple_w():
+  if ("W" in apple_letters):
+    drop_apple()
+
+def check_apple_x():
+  if ("X" in apple_letters):
+    drop_apple()
+
+def check_apple_y():
+  if ("Y" in apple_letters):
+    drop_apple()
+
+def check_apple_z():
+  if ("Z" in apple_letters):
+    drop_apple()
 
 draw_apple(apple, "A")
-wn.onkeypress(drop_apple, "a")
+wn.onkeypress(check_apple_a, "a")
+wn.onkeypress(check_apple_b, "b")
+wn.onkeypress(check_apple_c, "c")
+wn.onkeypress(check_apple_d, "d")
+wn.onkeypress(check_apple_e, "e")
+wn.onkeypress(check_apple_f, "f")
+wn.onkeypress(check_apple_g, "g")
+wn.onkeypress(check_apple_h, "h")
+wn.onkeypress(check_apple_i, "i")
+wn.onkeypress(check_apple_j, "j")
+wn.onkeypress(check_apple_k, "k")
+wn.onkeypress(check_apple_l, "l")
+wn.onkeypress(check_apple_m, "m")
+wn.onkeypress(check_apple_n, "n")
+wn.onkeypress(check_apple_o, "o")
+wn.onkeypress(check_apple_p, "p")
+wn.onkeypress(check_apple_q, "q")
+wn.onkeypress(check_apple_r, "r")
+wn.onkeypress(check_apple_s, "s")
+wn.onkeypress(check_apple_t, "t")
+wn.onkeypress(check_apple_u, "u")
+wn.onkeypress(check_apple_v, "v")
+wn.onkeypress(check_apple_w, "w")
+wn.onkeypress(check_apple_x, "x")
+wn.onkeypress(check_apple_y, "y")
+wn.onkeypress(check_apple_z, "z")
 
 wn.listen()
 trtl.mainloop()
